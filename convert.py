@@ -32,6 +32,9 @@ def ldap_convert(students):
 
     query += ")"
 
+    if not conn.bound:
+        conn.bind()
+
     # 500 is the default page size for UGent LDAP
     entries = conn.extend.standard.paged_search(
         "ou=people,dc=UGent,dc=be",
