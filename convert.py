@@ -2,16 +2,18 @@ import csv
 import os
 from ldap3 import SIMPLE, Server, Connection, ALL
 
+
 # LDAP connection
-server = Server(host=os.getenv("LDAP_HOST"), port=int(os.getenv("LDAP_PORT")), use_ssl=True, get_info=ALL)
-conn = Connection(
-    server,
-    user=os.getenv("LDAP_USER"),
-    password=os.getenv("LDAP_PASS"),
-    authentication=SIMPLE,
-    lazy=True,
-    auto_bind=True,
-)
+def connect_ldap():
+    server = Server(host=os.getenv("LDAP_HOST"), port=int(os.getenv("LDAP_PORT")), use_ssl=True, get_info=ALL)
+    return Connection(
+        server,
+        user=os.getenv("LDAP_USER"),
+        password=os.getenv("LDAP_PASS"),
+        authentication=SIMPLE,
+        # lazy=True,
+        auto_bind=True,
+    )
 
 
 def ldap_convert(students):
@@ -32,8 +34,7 @@ def ldap_convert(students):
 
     query += ")"
 
-    if not conn.bound:
-        conn.bind()
+    conn = connect_ldap()
 
     # 500 is the default page size for UGent LDAP
     entries = conn.extend.standard.paged_search(
