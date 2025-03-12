@@ -8,6 +8,13 @@ Simple web server to convert exported Ufora (D2L Brightspace) student list conta
 
 ## Usage
 
+### Hosted
+
+A hosted version of the service is available at http://10.10.210.41/. Accessible inside the IDLab network (VPN or iGent).
+
+
+### Local
+
 We recommend to use a Python virtual environment.
 
 
