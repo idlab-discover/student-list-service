@@ -10,9 +10,9 @@ Simple web server to convert exported Ufora (D2L Brightspace) student list conta
 
 ### Hosted
 
-~~A hosted version of the service is available at http://10.10.210.41/. Accessible inside the IDLab network (VPN or iGent).~~
+A hosted version of the service is available at http://ghtt.ugent.be/. Accessible inside the UGent Network (either directly or through VPN).
 
-Please contact Michiel Van Kenhove (UGent-imec) via email or Teams if you need to convert .csv's until the issue with the hosted version gets resolved.
+Please use the "Contact us" button on the bottom of the page if you encounter any issues.
 
 ### Local
 
